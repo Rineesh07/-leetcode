@@ -11,7 +11,8 @@ class Solution:
         for i in range(k):
             if isvowel(s[i]):
                 cnt += 1
-                max_cnt = max(cnt,max_cnt)
+            max_cnt = max(cnt,max_cnt)
+        print(max_cnt)
         for i in range(k,len(s)):
             if isvowel(s[i]) :
                 cnt += 1
