@@ -17,3 +17,4 @@ class Solution:
             if sumleft[i] == sumright[i]: 
                 return i
         return -1
+        
