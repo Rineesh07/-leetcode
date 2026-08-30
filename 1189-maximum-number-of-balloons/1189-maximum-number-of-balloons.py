@@ -6,10 +6,6 @@ class Solution:
                 textdict[ch] += 1
             else:
                 textdict[ch] = 1
-        s = 'ballon'
-        for k in list(textdict.keys()):
-            if k not in s:
-                del textdict[k]
         print(textdict)
         m = []
         if len(textdict) < 5:
@@ -23,7 +19,9 @@ class Solution:
                 m.append(v//2)
             elif k == 'o':
                 m.append(v//2)
-            else:
+            elif k == 'n':
                 m.append(v)
         print(m)
+        if len(m) < 5:
+            return 0
         return (min(m))
