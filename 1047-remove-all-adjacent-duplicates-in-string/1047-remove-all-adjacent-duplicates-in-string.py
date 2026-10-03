@@ -7,3 +7,4 @@ class Solution:
             else:
                 stack.append(ch)
         return ''.join(stack)
+        print(stack)
