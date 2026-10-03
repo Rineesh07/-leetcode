@@ -1,6 +1,7 @@
 class Solution:
     def calPoints(self, operations: List[str]) -> int:
         record = []
+        rs = 0
         for x in operations:
             if x == '+':
                 record.append(record[-1] + record[-2])
@@ -10,4 +11,4 @@ class Solution:
                 record.pop()
             else:
                 record.append(int(x))
-        return sum(record)
+        return  sum(record)
