@@ -11,6 +11,7 @@ class Solution:
             reverse.append(temp.val)
             temp = temp.next
         print(reverse)
+        
         temp = head
         for i in range(len(reverse)-1, -1 , -1):
             temp.val = reverse[i] 
