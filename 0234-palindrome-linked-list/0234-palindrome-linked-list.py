@@ -5,19 +5,17 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: ListNode | None) -> bool:
-        flag = True
         temp = head
         arr = []
         while temp != None:
             arr.append(temp.val)
             temp = temp.next
         print(arr)
-        rev = []
-        for i in range(len(arr)-1,-1,-1):
-            rev.append(arr[i])
-        print(rev)
-        for i in range(len(arr)):
-            if arr[i] != rev[i]:
+        i = 0
+        j = len(arr)-1
+        while i <= j :
+            if arr[i] != arr[j] :
                 return False
-                break
+            i += 1
+            j -= 1
         return True
