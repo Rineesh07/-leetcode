@@ -5,17 +5,26 @@
 #         self.next = next
 class Solution:
     def isPalindrome(self, head: ListNode | None) -> bool:
-        temp = head
-        arr = []
-        while temp != None:
-            arr.append(temp.val)
-            temp = temp.next
-        print(arr)
-        i = 0
-        j = len(arr)-1
-        while i <= j :
-            if arr[i] != arr[j] :
+        # Tortaise and Hare to find middle 
+        fast = head
+        slow = head 
+        while fast != None and fast.next != None :
+            slow = slow.next
+            fast = fast.next.next
+        # midle = slow
+        curr = slow 
+        prev = nxt = None
+        while curr != None : 
+            nxt = curr.next
+            curr.next = prev
+            prev = curr
+            curr = nxt
+        left = head
+        right = prev
+        while right != None:
+            if left.val != right.val:
                 return False
-            i += 1
-            j -= 1
+            left = left.next
+            right = right.next
         return True
+            
